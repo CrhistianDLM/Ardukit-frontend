@@ -1,0 +1,46 @@
+
+.login_container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background: rgb(255,255,255);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,127,42,1) 50%, rgba(255,255,255,1) 100%);
+  padding: 15px 15px;
+  .login_container__form{
+    max-width: 400px;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background: rgb(255,255,255);
+    .login_container__title{
+      color: #795548;
+      text-align: center;
+    }
+    mat-form-field.mat-form-field{
+      width: 100%;
+    }
+    .login_container__btn{
+      width: 100%;
+    }
+  }
+  .bandera{
+    background-color: white;
+    border-bottom: 2px solid #795548;
+    padding: 8px 12px;
+    min-width: 50%;
+  }
+  .login_container__register{
+    padding: 0;
+    align-self: flex-start;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .login_container__welcome{
+    text-align: right;
+    border-radius: 4px;
+    align-self: flex-end;
+    color: #795548;
+
+  }
+}

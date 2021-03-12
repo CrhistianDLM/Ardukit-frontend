@@ -1,0 +1,4 @@
+<p>productos works!</p>
+<div class="products">
+  <app-producto *ngFor="let item of [1,2,3,4, 5,6,7,8,9]" [valor1]="item%2 == 0" (click)="select(item)"></app-producto>
+</div>

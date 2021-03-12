@@ -1,0 +1,49 @@
+.container{
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+
+  justify-content: space-between;
+  &.order1{
+    &>div{
+      order: 2;
+    }
+    &>.image{
+      order: 1;
+    }
+  }
+  &.order2{
+    &>div{
+      order: 1;
+    }
+    &>.image{
+      order: 2;
+    }
+  }
+
+
+  .details{
+    width: 100%;
+    height: auto;
+    background-color: yellowgreen;
+    .title{
+      margin: 0;
+    }
+    .values{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .image{
+    max-height: 102px;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

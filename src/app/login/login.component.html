@@ -1,0 +1,19 @@
+<div class="login_container">
+  <div class="login_container__welcome bandera">
+    Welcome
+  </div>
+  <form class="login_container__form">
+    <h1 class="login_container__title">Login</h1>
+    <mat-form-field class="login_container__email"  appearance="fill" color="green">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="example@mail.com" [(ngModel)]="form.email" name="email">
+    </mat-form-field>
+    <mat-form-field class="login_container__password"  appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="minimo 8 caracteres"  [(ngModel)]="form.password" name="password">
+    </mat-form-field>
+    <button class="login_container__btn" mat-raised-button color="primary" (click)="login($event)">Login</button>
+  </form>
+  <button class="login_container__register bandera" mat-stroked-button color="primary">Register</button>
+
+</div>
