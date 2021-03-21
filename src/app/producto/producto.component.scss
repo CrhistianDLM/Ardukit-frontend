@@ -3,7 +3,6 @@
 
   display: flex;
   flex-direction: column;
-  background-color: yellow;
 
   justify-content: space-between;
   &.order1{
@@ -27,13 +26,18 @@
   .details{
     width: 100%;
     height: auto;
-    background-color: yellowgreen;
+    padding: 4px;
+    box-sizing: border-box;
     .title{
       margin: 0;
     }
     .values{
       display: flex;
       justify-content: space-between;
+      &__price{
+        font-weight: bold;
+        font-size: 1.125rem;
+      }
     }
   }
 

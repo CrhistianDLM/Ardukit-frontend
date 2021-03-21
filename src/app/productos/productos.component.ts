@@ -14,5 +14,6 @@ export class ProductosComponent implements OnInit {
   }
   select(item: number){
     this.router.navigate(["/productos/detalles/"+item])
+    alert("Agregado al carrito");
   }
 }

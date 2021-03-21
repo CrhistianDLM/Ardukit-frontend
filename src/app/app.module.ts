@@ -17,19 +17,26 @@ import {MatListModule} from '@angular/material/list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ProductosComponent } from './productos/productos.component';
 import { ProductoComponent } from './producto/producto.component';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
+import { CategoriasComponent } from './categorias/categorias.component';
+import { ItemCategoriaComponent } from './item-categoria/item-categoria.component';
+import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProductosComponent,
     ProductoComponent,
-    DetallesProductoComponent
+    DetallesProductoComponent,
+    CategoriasComponent,
+    ItemCategoriaComponent,
+    ClickStopPropagationDirective
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,9 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
     MatSidenavModule,
     HttpClientModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatExpansionModule,
+    MatCheckboxModule
   ],
   exports: [
 
