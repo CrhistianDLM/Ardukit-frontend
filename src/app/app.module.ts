@@ -27,6 +27,7 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
 import { CategoriasComponent } from './categorias/categorias.component';
 import { ItemCategoriaComponent } from './item-categoria/item-categoria.component';
 import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { ClickStopPropagationDirective } from './directives/click-stop-propagati
     DetallesProductoComponent,
     CategoriasComponent,
     ItemCategoriaComponent,
-    ClickStopPropagationDirective
+    ClickStopPropagationDirective,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

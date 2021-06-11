@@ -6,6 +6,12 @@
 </div>
 <div class="products">
 
-  <app-producto *ngFor="let item of [1,2,3,4, 5,6,7,8,9]" [valor1]="item%2 == 0" (click)="select(item)"></app-producto>
+  <app-producto
+    *ngFor="let item of products; let i = index"
+    [valor1]="i%2 == 0"
+    [name]="item.name"
+    [price]="''+item.price"
+    (click)="select(item.id)"
+    ></app-producto>
 </div>
 

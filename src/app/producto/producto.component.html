@@ -1,9 +1,9 @@
 <div class="container" [class.order1]="!valor1" [class.order2]="valor1">
   <div class="details">
-    <h3 class="title">Titulo</h3>
+    <h3 class="title">{{name}}</h3>
     <div class="values">
       <span class="values__number">+ordenes</span>
-      <span class="values__price">$0.00</span>
+      <span class="values__price">${{price}}</span>
     </div>
   </div>
   <div class="image">

@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { AuthenticatedGuard } from './authenticated.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,8 +13,10 @@ const routes: Routes = [
     component: ProductosComponent,
     canActivate: [AuthenticatedGuard],
   },
+  {path: '', redirectTo:"/productos", pathMatch:"full" },
   {path: 'productos/detalles/:id', component: DetallesProductoComponent},
-  {path: 'categorias', component: CategoriasComponent}
+  {path: 'categorias', component: CategoriasComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

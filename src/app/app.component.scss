@@ -28,3 +28,28 @@
   background-size: cover;
 
 }
+mat-drawer{
+  background-color: rgba(255,127,42,1);
+  .main_menu{
+    background-color: rgba(255,127,42,1);
+    height: 100vh;
+    & mat-list-item{
+      border-bottom: 1px solid #fff;
+      &:first-child{
+        border-top: 1px solid #fff;
+
+      }
+      & a{
+        font-size: 0.875rem;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 50px;
+
+        &:hover{
+          background-color: rgba(255,127,42,0.7);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="category_container">
+  <div class="category_container__section1">
+    <span class="category_container__section1--title">Titulo</span>
+    <div>
+      <input type="checkbox" name="" id="" class="category_container__section1--enable">
+      <button class="category_container__section1--options" (click)="showOptions()">></button>
+    </div>
+  </div>
+  <div class="category_container__section2" [ngClass]="optionsVisible()">
+    <button class="category_container__section2--delete">Eliminar</button>
+    <button class="category_container__section2--edit">Editar</button>
+  </div>
+</div>

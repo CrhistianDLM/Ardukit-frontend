@@ -1,3 +1,4 @@
+import { AKRegisterForm } from './register-interfase';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -15,6 +16,7 @@ export class UserService {
   public static readonly PARTNER = 2;
   public static readonly CLIENT = 3;
   private host: string = 'http://localhost:8090/api/login';
+  private linkRegister: string = 'http://localhost:8090/api/register';
 
   constructor(private http: HttpClient) { }
 
@@ -27,10 +29,26 @@ export class UserService {
   }
   getRole(): number{
     const session = localStorage.getItem("session_info");
-    if(session ){
+    if(session){
       const data: LoginResponse = JSON.parse(session);
       return data.role;
     }
     return UserService.CLIENT;
+  }
+  getSessionToken(): string|null{
+    const session = localStorage.getItem("session_info");
+    if(session){
+      const data: LoginResponse = JSON.parse(session);
+      return data.access_token;
+    }
+    return null;
+  }
+  logOut(){
+    localStorage.removeItem("session_info");
+
+  }
+
+  register(params: AKRegisterForm): Observable<LoginResponse>{
+    return this.http.post<LoginResponse>(this.linkRegister, params);
   }
 }
