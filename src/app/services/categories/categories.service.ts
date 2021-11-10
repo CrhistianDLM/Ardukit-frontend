@@ -13,21 +13,23 @@ export class CategoriesService {
 
   constructor(private http: HttpClient) { }
   getCategories(token: string): Observable<[CategoryResponse]>{
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': token,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.get<[CategoryResponse]>(this.host, httpOptions);
   }
   addCategory(token: string, name: String, description: string){
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': `Bearer ${token}`,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.post<[CategoryResponse]>(this.host, {

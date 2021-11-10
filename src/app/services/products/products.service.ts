@@ -14,21 +14,23 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
   getProducts(token: string): Observable<[ProductResponse]>{
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': token,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.get<[ProductResponse]>(this.host, httpOptions);
   }
   getProduct(token: string, id:string): Observable<ProductResponse>{
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': token,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.get<ProductResponse>(this.host+"/"+id, httpOptions);

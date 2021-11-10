@@ -24,9 +24,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(params: AKForm): Observable<LoginResponse>{
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.post<LoginResponse>(this.host, params,httpOptions);
@@ -64,19 +65,21 @@ export class UserService {
 
   }
   refresh(token: string){
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': "Bearer" + token,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.post<LoginResponse>(this.linkRefreshSessionToken, {}, httpOptions);
   }
   register(params: AKRegisterForm): Observable<LoginResponse>{
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.post<LoginResponse>(this.linkRegister, params, httpOptions);

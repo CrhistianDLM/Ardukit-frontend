@@ -16,11 +16,12 @@ export class OrdersService {
       items : items,
       description : description
     }
+    document.cookie = environment.cookieKey;
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'Authorization': "Bearer" + this.token,
-        'Cookie': environment.cookieKey
+
       })
     };
     return this.http.post<any>(this.host, params, httpOptions);
