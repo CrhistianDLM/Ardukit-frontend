@@ -1,6 +1,8 @@
+import { environment } from './../../../environments/environment';
+import { NewSessionToken } from './refresh_token-interface';
 import { AKRegisterForm } from './register-interfase';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -15,13 +17,19 @@ export class UserService {
   public static readonly ADMIN = 1;
   public static readonly PARTNER = 2;
   public static readonly CLIENT = 3;
-  private host: string = 'http://localhost:8090/api/login';
-  private linkRegister: string = 'http://localhost:8090/api/register';
+  private host: string = environment.apiUrl+'/api/login';
+  private linkRegister: string = environment.apiUrl+'/api/register';
+  private linkRefreshSessionToken: string = environment.apiUrl+'/api/refresh';
 
   constructor(private http: HttpClient) { }
 
   login(params: AKForm): Observable<LoginResponse>{
-    return this.http.post<LoginResponse>(this.host, params);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Cookie': environment.cookieKey
+      })
+    };
+    return this.http.post<LoginResponse>(this.host, params,httpOptions);
   }
   isLoggedIn(): boolean{
     const session = localStorage.getItem("session_info");
@@ -35,6 +43,14 @@ export class UserService {
     }
     return UserService.CLIENT;
   }
+  isExpired(): Boolean{
+    const session = localStorage.getItem("session_info");
+    if(session){
+      const data: LoginResponse = JSON.parse(session);
+      return (new Date(data.expires_in)).getTime() < (new Date()).getTime();
+    }
+    return true;
+  }
   getSessionToken(): string|null{
     const session = localStorage.getItem("session_info");
     if(session){
@@ -47,8 +63,22 @@ export class UserService {
     localStorage.removeItem("session_info");
 
   }
-
+  refresh(token: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': "Bearer" + token,
+        'Cookie': environment.cookieKey
+      })
+    };
+    return this.http.post<LoginResponse>(this.linkRefreshSessionToken, {}, httpOptions);
+  }
   register(params: AKRegisterForm): Observable<LoginResponse>{
-    return this.http.post<LoginResponse>(this.linkRegister, params);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Cookie': environment.cookieKey
+      })
+    };
+    return this.http.post<LoginResponse>(this.linkRegister, params, httpOptions);
   }
 }

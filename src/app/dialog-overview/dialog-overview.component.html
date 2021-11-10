@@ -1,0 +1,20 @@
+<div [ngSwitch]="data.type">
+  <div *ngSwitchCase="'alert'">
+      <h1 mat-dialog-title>{{data.title}}</h1>
+    <div mat-dialog-content>
+      <p>{{data.message}}</p>
+    </div>
+  </div>
+  <div *ngSwitchCase="'dialog'">
+    <p>Ingresa nueva categoria</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <input matInput [(ngModel)]="input">
+    </mat-form-field>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Back</button>
+  <button mat-button [mat-dialog-close]="input" cdkFocusInitial>Continue</button>
+</div>

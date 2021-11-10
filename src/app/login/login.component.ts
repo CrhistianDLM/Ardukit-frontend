@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
       //alert("Session iniciada: "+data.access_token)
       localStorage.setItem("session_info", JSON.stringify(data));
       this.nextView();
+    }, (err) => {
+      alert(err.statusText);
     })
   }
   nextView(){

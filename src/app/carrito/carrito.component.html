@@ -1,0 +1,24 @@
+<mat-nav-list *ngIf="carrito.length > 0">
+  <mat-list-item *ngFor="let item of carrito; let i = index">
+    <div class="custom_list">
+      <div class="item-info">
+        {{ item.name }} - {{item.price | currency}}
+      </div>
+      <button mat-raised-button color="warn" (click)="removeItem(i)">Eliminar</button>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+  <mat-list-item>
+    <b>Total: </b>{{getCount() | currency}}
+  </mat-list-item>
+</mat-nav-list>
+<div class="cart_empty">
+
+  <h1 *ngIf="carrito.length == 0">
+    Carrito vacio
+  </h1>
+  <a routerLink="/productos" routerLinkActive="active">
+    <button mat-raised-button color="primary">Ir a productos</button>
+  </a>
+  <button mat-raised-button color="secondary" (click)="generateOrder()">Ordenar Ahora</button>
+</div>

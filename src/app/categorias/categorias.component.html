@@ -4,6 +4,7 @@
     <app-item-categoria  *ngFor="let item of [1,2,3,4, 5,6,7,8,9]" ></app-item-categoria>
   </div>
 -->
+<a mat-button color="primary" *ngIf="!isEditable" href="/nueva-categoria">Agregar nueva</a>
 
 <mat-accordion class="categories">
   <mat-expansion-panel *ngFor="let item of categories" >
@@ -18,9 +19,15 @@
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <p>
+      {{item.description}}
+    </p>
     <div class="category_container__section2" *ngIf="!isEditable">
       <button class="category_container__section2--delete" (click)="editCategory(item.id)">Eliminar</button>
       <button class="category_container__section2--edit" (click)="deleteCategory(item.id)">Editar</button>
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+
+<!--<button *ngIf="!isEditable" (click)="openDialog()">Agregar nueva</button>-->
+<a mat-button color="primary" *ngIf="!isEditable" href="/nueva-categoria">Agregar nueva</a>

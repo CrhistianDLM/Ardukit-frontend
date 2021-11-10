@@ -296,13 +296,22 @@
   <mat-drawer #drawer [mode]="'push'">
     <mat-list role="list" class="main_menu">
       <mat-list-item>
+        <span class="material-icons" color="primary">apps</span>
         <a routerLink="/productos" routerLinkActive="active">Productos</a>
       </mat-list-item>
       <mat-list-item>
+        <span class="material-icons" color="primary">category</span>
         <a routerLink="/categorias" routerLinkActive="active">Categorias</a>
       </mat-list-item>
-      <mat-list-item *ngIf="loggued">
-        <button class="category_container__section2--delete" (click)="logOut()">Eliminar</button>
+      <mat-list-item>
+        <span class="material-icons" color="primary">
+            shopping_cart
+        </span>
+        <a routerLink="/cart" routerLinkActive="active">Carrito</a>
+      </mat-list-item>
+      <mat-list-item *ngIf="loggued" (click)="logOut()">
+        <span class="material-icons" color="primary">logout</span>
+        <a class="category_container__section2--delete">Cerrar Sesión</a>
       </mat-list-item>
 
      </mat-list>

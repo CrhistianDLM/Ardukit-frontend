@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "http://localhost:8090",
+  cookieKey: '__test=c79de9b3752c66be3a5a1c0b1cfefe82',
 };
 
 /*

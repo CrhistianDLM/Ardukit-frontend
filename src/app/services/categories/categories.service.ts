@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent } from '@angular/common/http';
 import { CategoryResponse } from './category_response-interface';
@@ -8,19 +9,36 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private host: string = 'http://localhost:8090/api/category';
+  private host: string = environment.apiUrl+'/api/category';
 
   constructor(private http: HttpClient) { }
   getCategories(token: string): Observable<[CategoryResponse]>{
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': token
+        'Authorization': token,
+        'Cookie': environment.cookieKey
       })
     };
     return this.http.get<[CategoryResponse]>(this.host, httpOptions);
   }
-  addCategory(){
+  addCategory(token: string, name: String, description: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `Bearer ${token}`,
+        'Cookie': environment.cookieKey
+      })
+    };
+    return this.http.post<[CategoryResponse]>(this.host, {
+      name,
+      description
+    },httpOptions);
+  }
+  changeCategory(token: string, id: number){
+
+  }
+  deleteCategory(){
 
   }
 }

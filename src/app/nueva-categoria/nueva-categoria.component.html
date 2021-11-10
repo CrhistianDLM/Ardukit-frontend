@@ -1,0 +1,16 @@
+
+
+<div class="form_container">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Iot" [(ngModel)]="name"/>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput [(ngModel)]="description" placeholder="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque officiis consectetur nobis tenetur tempora placeat eaque earum, numquam reiciendis fugit cupiditate autem reprehenderit aliquid, cum natus inventore repudiandae voluptatibus id."></textarea>
+  </mat-form-field>
+
+<button mat-raised-button color="primary" (click)="saveCategory()" >Guardar</button>
+
+</div>

@@ -18,6 +18,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
@@ -28,6 +29,12 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { ItemCategoriaComponent } from './item-categoria/item-categoria.component';
 import { ClickStopPropagationDirective } from './directives/click-stop-propagation.directive';
 import { RegisterComponent } from './register/register.component';
+import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CarritoComponent } from './carrito/carrito.component';
+import { NuevaCategoriaComponent } from './nueva-categoria/nueva-categoria.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +45,10 @@ import { RegisterComponent } from './register/register.component';
     CategoriasComponent,
     ItemCategoriaComponent,
     ClickStopPropagationDirective,
-    RegisterComponent
+    RegisterComponent,
+    DialogOverviewComponent,
+    CarritoComponent,
+    NuevaCategoriaComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +64,11 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatListModule,
     MatExpansionModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatCardModule,
+    MatDialogModule,
+    MatGridListModule
+
   ],
   exports: [
 

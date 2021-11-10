@@ -1,7 +1,7 @@
 <h1 class="page-title">productos</h1>
 <div class="search_container">
   <div class="search_field">
-    <input type="text" class="search_field__input" placeholder="search ...">
+    <input type="text" class="search_field__input" placeholder="search ..." (keyup)="filterBy()" [(ngModel)]="search">
   </div>
 </div>
 <div class="products">
@@ -11,7 +11,7 @@
     [valor1]="i%2 == 0"
     [name]="item.name"
     [price]="''+item.price"
-    (click)="select(item.id)"
+    (click)="select(item)"
     ></app-producto>
 </div>
 
