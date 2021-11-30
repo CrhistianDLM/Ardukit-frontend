@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: "http://localhost:8090",
-  cookieKey: '__test=c79de9b3752c66be3a5a1c0b1cfefe82',
+  cookieKey: '',
 };
 
 /*
