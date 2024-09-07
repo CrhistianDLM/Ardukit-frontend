@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Ardukit-frontend"
+  "defaultProject": "Ardukit-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
