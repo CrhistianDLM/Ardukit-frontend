@@ -35,7 +35,7 @@ export class CarritoComponent implements OnInit {
     return this.carrito.reduce((acc,item) => acc + (+item.price), 0);
   }
   generateOrder(){
-    this.orderService.createOrder(this.carrito).subscribe(s => {
+    this.orderService.createOrder(this.carrito).subscribe((s: any) => {
       if(s.id){
         this.cartService.vaciarCarrito();
         this.carrito = [];

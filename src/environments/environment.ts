@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:8090",
+  apiUrl: "http://192.168.1.147:8080",
   cookieKey: '',
 };
 
