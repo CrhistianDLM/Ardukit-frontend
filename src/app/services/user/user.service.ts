@@ -56,7 +56,7 @@ export class UserService {
     const session = localStorage.getItem("session_info");
     if(session){
       const data: LoginResponse = JSON.parse(session);
-      return data.access_token;
+      return `${data.token_type} ${data.access_token}`;
     }
     return null;
   }

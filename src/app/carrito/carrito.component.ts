@@ -32,7 +32,7 @@ export class CarritoComponent implements OnInit {
     this.carrito = this.cartService.darTodos(this.userService.getSessionToken() as string);
   }
   getCount(){
-    return this.carrito.reduce((acc,item) => acc + item.price, 0);
+    return this.carrito.reduce((acc,item) => acc + (+item.price), 0);
   }
   generateOrder(){
     this.orderService.createOrder(this.carrito).subscribe(s => {
