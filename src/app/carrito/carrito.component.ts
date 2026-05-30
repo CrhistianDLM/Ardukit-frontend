@@ -3,7 +3,7 @@ import { UserService } from './../services/user/user.service';
 import { CarritoService } from './../services/carrito/carrito.service';
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.scss']

@@ -8,7 +8,7 @@ export interface DialogData {
   message: string;
   type: string;
 }
-@Component({
+@Component({ standalone: false,
   selector: 'app-dialog-overview',
   templateUrl: './dialog-overview.component.html',
   styleUrls: ['./dialog-overview.component.scss']

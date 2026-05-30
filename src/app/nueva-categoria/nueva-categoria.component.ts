@@ -4,7 +4,7 @@ import { CategoriesService } from './../services/categories/categories.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-nueva-categoria',
   templateUrl: './nueva-categoria.component.html',
   styleUrls: ['./nueva-categoria.component.scss']

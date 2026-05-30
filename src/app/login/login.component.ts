@@ -7,7 +7,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {UserService} from '../services/user/user.service'
 import { LoginResponse } from '../services/user/login_response-interface';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']

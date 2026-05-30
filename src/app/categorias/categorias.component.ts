@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user/user.service';
 import { CategoriesService } from './../services/categories/categories.service';
 import { CategoryResponse } from './../services/categories/category_response-interface';
-@Component({
+@Component({ standalone: false,
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
   styleUrls: ['./categorias.component.scss']
