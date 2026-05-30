@@ -5,7 +5,7 @@ provider "aws" {
 # 1. Bucket S3 con nombre único
 resource "aws_s3_bucket" "angular_app" {
   bucket        = "mi-app-angular-semillero-devops" # Cambia esto por un nombre único
-  force_destroy = true 
+  force_destroy = true
 }
 
 # 2. Configurar el Bucket como sitio web estático
