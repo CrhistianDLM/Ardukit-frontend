@@ -3,7 +3,7 @@ import { UserService } from './../services/user/user.service';
 import { ProductsService } from './../services/products/products.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-@Component({
+@Component({ standalone: false,
   selector: 'app-detalles-producto',
   templateUrl: './detalles-producto.component.html',
   styleUrls: ['./detalles-producto.component.scss']

@@ -1,4 +1,8 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { MatDialogModule } from "@angular/material/dialog";
 
 import { ProductosComponent } from './productos.component';
 
@@ -8,9 +12,10 @@ describe('ProductosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductosComponent ]
-    })
-    .compileComponents();
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [RouterTestingModule, HttpClientTestingModule, MatDialogModule],
+      declarations: [ProductosComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

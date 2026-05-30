@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-producto',
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.scss']

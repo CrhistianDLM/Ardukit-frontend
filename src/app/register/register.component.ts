@@ -5,7 +5,7 @@ import { AKRegisterForm } from './../services/user/register-interfase';
 import { Component, OnInit } from '@angular/core';
 import { AKForm } from '../services/user/login-interface';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']

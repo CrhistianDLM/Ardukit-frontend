@@ -13,7 +13,7 @@ export interface DialogData {
 }
 
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.scss']

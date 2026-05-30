@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { UserService } from './services/user/user.service';
 import { Component } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

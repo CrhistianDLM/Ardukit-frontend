@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-item-categoria',
   templateUrl: './item-categoria.component.html',
   styleUrls: ['./item-categoria.component.scss']

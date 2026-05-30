@@ -8,6 +8,7 @@ import { ProductosComponent } from './productos/productos.component';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CarritoComponent } from './carrito/carrito.component';
+
 const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
     component: ProductosComponent,
     canActivate: [AuthenticatedGuard],
   },
-  {path: '', redirectTo:"/productos", pathMatch:"full" },
+  {path: '', redirectTo: "/productos", pathMatch: "full" },
   {path: 'productos/detalles/:id', component: DetallesProductoComponent},
   {path: 'categorias', component: CategoriasComponent},
   {path: 'register', component: RegisterComponent},
